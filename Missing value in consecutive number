@@ -1,0 +1,7 @@
+m=[1,2,3,4,5,6,7,9]
+n=9
+summ=(n*(n+1))//2
+i=0
+for x in m:
+    i=i+x
+print("Missing number : ",summ-i)
