@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scan=new Scanner(System.in);
+	    System.out.println("Enter the input: ");
+	    int num=scan.nextInt();
+	    int num2=num;
+	    int s=0;
+	   while(num!=0){
+	       int res=num%10;
+	       s=(s*10)+(res);
+	       num=num/10;
+	   }
+	   System.out.println(s);
+	}
+}
