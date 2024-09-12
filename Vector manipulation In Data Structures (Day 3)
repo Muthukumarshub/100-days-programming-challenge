@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    
+    vector<int>vec={2,7,9,10,14};
+    vec.push_back(100);
+    vec.push_back(101);
+    vec.pop_back();
+    vec.begin();
+    vec.end();
+    vec.empalce_back(1000);
+   vec.erase(vec.begin()+1,vec.end()-1);
+   vec.erase(vec.begin());
+   vec.erase(vec.begin(),vec.end()-1);
+   vec.erase(vec.begin()+3,vec.end()-0);
+   vec.erase(vec.begin()+1,vec.end()-0);
+    for(int i:vec ){
+        cout<<i<<" ";
+    }
+    return 0;
+}
