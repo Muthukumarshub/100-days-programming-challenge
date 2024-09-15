@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+void recur(int n, string s){
+    if(n>10){
+        return;
+    }
+    else{
+        cout<<s<<endl;
+        recur(n+1,s);
+    }
+}
+
+int main()
+{
+   recur(0,"Muthukumar");
+    return 0;
+}
