@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int sort(int key,int arr[],int srt,int end)
+{
+    while(srt<=end){
+    int mid=(srt+end)/2;
+
+    if(key==arr[mid]){
+        return mid;
+    }
+    else if(arr[mid]<key){
+        srt=mid+1;
+    }
+    else{
+        end=mid-1;
+    }
+}
+return -1;
+}
+int main(){
+    int arr[]={1,2,3,4,5,6,7};
+    int key=6;
+    int s=sizeof(arr)/sizeof(arr[0]);
+    int mid=(arr[0]+arr[s-1])/2;
+    int start=0;
+    int end=s-1;
+    int res=sort(key,arr,start,end);
+    if(res==-1){
+        cout<<"ekement is not found in this array ";
+    }
+    else{
+        cout<<"Element found in the index : "<<res+1;
+    }
+}
