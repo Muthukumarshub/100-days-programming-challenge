@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int findNonMinOrMax(vector<int>& nums) {
+     int s=nums.size();
+     int temp;
+     if(s<=2){
+        return -1;
+     }   
+     else{
+        for(int i=0;i<s;i++){
+            for(int j=i+1;j<s;j++){
+                if(nums[i]>nums[j]){
+                    temp=nums[i];
+                    nums[i]=nums[j];
+                    nums[j]=temp;
+                }
+                else{
+                    continue;
+                }
+            }
+        }
+        return nums[1];
+     }
+    }
+};
