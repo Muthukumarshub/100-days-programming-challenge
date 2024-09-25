@@ -1,0 +1,21 @@
+Writers and novels
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n,t=0;
+    cin>>n;
+    vector<int> ar(n);
+    for(int i=0;i<n;i++){
+        cin>>ar[i];
+        t+=ar[i];
+    }
+    int p=t*4;
+    int b=p/100;
+    if(p%100 != 0){
+        b++;
+    } 
+    cout<<b<<endl;
+    return 0;
+}
