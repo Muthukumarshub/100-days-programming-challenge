@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        int s;
+        cin>>s;
+        vector<int> val(s);
+        for(int j=0;j<s;j++){
+            cin>>val[j];
+        }
+        int c=0;
+        for(int j=0;j<s;j++){
+            if(val[j]>=1000){
+                c+=1;
+            }
+            else{
+                continue;
+            }
+        }
+        cout<<c<<endl;
+    }
+}
