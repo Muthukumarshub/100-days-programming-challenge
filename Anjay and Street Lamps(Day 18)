@@ -1,0 +1,32 @@
+
+
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    int n, l;
+    cin >> n >> l;
+    
+    vector<int> lanterns(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> lanterns[i];
+    }
+    
+    sort(lanterns.begin(), lanterns.end());
+    
+    double max_gap = max(lanterns[0] - 0, l - lanterns[n - 1]);
+
+    for (int i = 1; i < n; ++i) {
+        double gap = (lanterns[i] - lanterns[i - 1]) / 2.0;
+        max_gap = max(max_gap, gap);
+    }
+
+    cout << fixed << setprecision(10) << max_gap << endl;
+
+    return 0;
+}
