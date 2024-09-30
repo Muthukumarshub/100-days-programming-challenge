@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    vector<int> nums(n);
+    for(int i=0;i<n;i++){
+        cin>>nums[i];
+    }
+    vector<int> odd;
+    vector<int> even;
+    vector<int> res;
+    for(int i=0;i<n;i++){
+        if(nums[i]%2==0){
+            even.push_back(nums[i]);
+        }
+        else{
+            odd.push_back(nums[i]);
+        }
+    }
+    for(int i=0;i<odd.size();i++){
+        int temp;
+        for(int j=i+1;j<odd.size();j++){
+            if(odd[i]<odd[j]){
+                temp=odd[i];
+                odd[i]=odd[j];
+                odd[j]=temp;
+            }
+            else{
+                continue;
+            }
+        }
+    }
+    for(int i=0;i<even.size();i++){
+        int tem;
+        for(int j=i+1;j<even.size();j++){
+            if(even[i]<even[j]){
+                tem=even[i];
+                even[i]=even[j];
+                even[j]=tem;
+            }
+            else{
+                continue;
+            }
+        }
+    }
+    for(int i=0;i<even.size();i++){
+        odd.push_back(even[i]);
+    }
+    for(int i=0;i<n;i++){
+        cout<<odd[i]<<" ";
+    }
+    return 0;
+}
