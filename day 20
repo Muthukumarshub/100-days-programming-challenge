@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n, k;
+    cin >> n; 
+    vector<int> arr(n);
+        for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    cin >> k; 
+    int totalCalibre = 0;
+    for (int i = 0; i < n; i++) {
+        totalCalibre += arr[i];
+    }
+    int learningSessions = (totalCalibre + k - 1) / k; 
+    int totalLearningTime = learningSessions * 10; 
+    int totalBreakTime = learningSessions * 3;  
+    int totalTime = totalLearningTime + totalBreakTime;
+    cout << totalTime << endl;
+    return 0;
+}
