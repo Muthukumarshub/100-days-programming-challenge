@@ -1,0 +1,45 @@
+class Solution {
+  public:
+    // Function to check if two arrays are equal or not.
+    bool check(vector<int>& arr1, vector<int>& arr2) {
+        // code here
+        int n=arr1.size();
+        for(int i=0;i<n;i++){ 
+                    int temp;
+            for(int j=i;j<n;j++){
+                if(arr1[i]>arr1[j]){
+                    temp=arr1[i];
+                    arr1[i]=arr1[j];
+                    arr1[j]=temp;
+                }
+            }
+            
+        }
+         for(int i=0;i<n;i++){ 
+                     int tem;
+            for(int j=i;j<n;j++){
+                if(arr2[i]>arr2[j]){
+                    tem=arr2[i];
+                    arr2[i]=arr2[j];
+                    arr2[j]=tem;
+                }
+            }
+            
+        }
+        int s=0;
+        for(int i=0;i<n;i++){
+            if(arr1[i]==arr2[i]){
+                s+=1;
+            }
+            else{
+                continue;
+            }
+        }
+        if(s==n){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+};
