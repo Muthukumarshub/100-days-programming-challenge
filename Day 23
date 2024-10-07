@@ -1,0 +1,38 @@
+number of day pairs
+
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
+int countPairs(vector<int>& hours) {
+    unordered_map<int, int> remainderCount;
+    int pairCount = 0;
+
+    for (int hour : hours) {
+        int remainder = hour % 24;
+        int complement = (24 - remainder) % 24;
+        
+        if (remainderCount.find(complement) != remainderCount.end()) {
+            pairCount += remainderCount[complement];
+        }
+
+        remainderCount[remainder]++;
+    }
+
+    return pairCount;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> hours(n);
+
+    for (int i = 0; i < n; i++) {
+        cin >> hours[i];
+    }
+
+    cout << countPairs(hours) << endl;
+    return 0;
+}
