@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        int a;
+        cin>>a;
+        if(a>=1 && a<=10){
+            cout<<"lower double"<<endl;
+        }
+        else if(a>=11 && a<=15){
+            cout<<"Lower single"<<endl;
+        }
+        else if(a>=16 && a<=25){
+            cout<<"upper double"<<endl;
+        }
+        else{
+            cout<<"upper single"<<endl;
+        }
+    }
+}
