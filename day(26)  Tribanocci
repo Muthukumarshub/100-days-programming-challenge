@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    vector<int> num={0,1,1};
+    int n;
+    cin>>n;
+    for(int i=3;i<=n;i++){
+        num.push_back(num[i-1]+num[i-2]+num[i-3]);
+    }
+    cout<<num[n]<<endl;;
+    return 0;
+}
