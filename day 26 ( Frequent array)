@@ -1,0 +1,26 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter the number of elements : ";
+    cin>>n;
+    vector<int> num(n);
+    for(int i=0;i<n;i++){
+        cin>>num[i];
+    }
+    auto max=max_element(num.begin(),num.end());
+    cout<<"\n"<<"Max number : "<<*max;
+    vector<int> fre(*max);
+    for(int i=0;i<n;i++){
+        int s=num[i];
+        fre[s]+=1;
+    }
+    cout<<"\n";
+    for(int i=0;i<n;i++){
+        int nk=num[i];
+        cout<<num[i]<<" -- "<<fre[nk]<<endl;
+    }
+    return 0;
+}
