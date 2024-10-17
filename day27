@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int> num={1,1,2,3,4,5,55,6};
+    map<int,int> arr;
+    for(auto x:num){
+        arr[x]++;
+    }
+    int a=0;
+    int aa=num[0];
+    for(auto x:arr){
+        if(x.second>a){
+            aa=x.first;
+            a=x.second;
+        }
+}
+cout<<aa<<" - "<<a;
+}
