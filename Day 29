@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    string reverseWords(string s) {
+        stringstream ss(s);
+        string word;
+        stack<string> words;
+        
+        while(getline(ss, word, ' ')) {
+            if (!word.empty()) {
+                words.push(word); 
+            }
+        }
+
+        string res = "";
+        while(!words.empty()) {
+            res += words.top();  
+            words.pop();
+            if (!words.empty()) { 
+                res += " ";
+            }
+        }
+
+        return res;
+    }
+};
+
+int main() {
+    Solution s1;
+    string s;
+    getline(cin, s); // Read the entire input string with spaces
+    string res = s1.reverseWords(s);
+    cout << res;
+}
