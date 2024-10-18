@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+bool paran(string s){
+    stack<char> st;
+      
+    if(s.size() %2==0){
+        for(char i : s){
+            if(i=='{' || i=='[' || i=='('){
+                st.push(i);
+            }
+            else{
+                if(st.size() ==0){
+                    return false;
+                }
+                else{
+                    char ss=st.top();
+                    if((ss=='{' && i=='}') || (ss=='[' && i==']') || (ss=='(' && i==')')){
+                        st.pop();
+                    }
+                    else{
+                        return false;
+                    }
+                }
+            }
+        }
+        return st.empty();
+    }
+    else{
+        return false;
+    }
+}
+int main()
+{
+    string s;
+    cin>>s;
+    bool res=paran(s);
+    if(res==0){
+        cout<<false;
+    }
+    else{
+        cout<<true;
+    }
+    return 0;
+}
