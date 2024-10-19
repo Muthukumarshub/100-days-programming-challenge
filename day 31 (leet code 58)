@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        stringstream ss(s);
+        string word;
+        stack<string> words;
+        while(getline(ss,word,' ')){
+            if (!word.empty()) {
+            words.push(word);
+        }
+        
+    }
+    string res=words.top();
+        int val=res.size();
+            return val;
+
+    }
+};
