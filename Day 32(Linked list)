@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node{
+    int data;
+    Node* next;
+};
+void insert(Node*& head, int val){
+    Node* newst=new Node();
+    newst->data=val;
+    newst->next=head;
+    head=newst;
+}
+void insertpos(Node*& head,int pos, int val){
+    if(pos==1){
+        insert(head,val);
+    }
+    else{
+        Node* temp=head;
+        for(int i=1;i<pos-1;i++){
+            temp=temp->next;
+        }
+        Node* newnd=new Node();
+        newnd->data=val;
+        newnd->next=temp->next;
+        temp->next=newnd;
+    }
+}
+void printlist(Node* head){
+    while(head!=nullptr){
+        cout<<"->"<<head->data;
+        head=head->next;
+    }
+}
+int main()
+{
+    Node* head=nullptr;
+    insert(head,1);
+    insert(head,2);
+    insert(head,3);
+    insert(head,4);
+    insert(head,5);
+    insertpos(head,3,10);
+    printlist(head);
+    return 0;
+}
