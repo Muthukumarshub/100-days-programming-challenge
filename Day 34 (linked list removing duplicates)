@@ -1,0 +1,34 @@
+  struct ListNode {
+      int val;
+      ListNode *next;
+      ListNode() : val(0), next(nullptr) {}
+     ListNode(int x) : val(x), next(nullptr) {}
+  ListNode(int x, ListNode *next) : val(x), next(next) {}
+ };
+ 
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        map<int,int> mapp;
+        while(head!=nullptr){
+            mapp[head->val]++;
+            head=head->next;
+        }
+        int s=mapp.size();
+        ListNode* temp=nullptr;
+        ListNode * prev=nullptr;
+        for(const auto& x:mapp){
+            if(x.second == 1){
+            if(temp==nullptr){
+                temp=new ListNode(x.first);
+                prev=temp;
+            }
+            else{
+                prev->next=new ListNode(x.first);
+                prev=prev->next;
+            }
+        }
+        }
+        return temp;
+    }
+};
