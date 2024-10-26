@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        map<int,int> map;
+        for(int i=0;i<nums.size();i++){
+            map[nums[i]]++;
+        }
+        int ans=0;
+        for(const auto& x:map){
+            ans=max(ans,x.second);
+        }
+        int key;
+        for(const auto& x:map){
+            if(x.second == ans){
+                key=x.first;
+                break;
+            }
+
+            else{
+                continue;
+            }
+        }
+        return key;
+    }
+};
+int main(){
+    Solution s;
+    vector<int> res={1,1,2,3,2,1,1};
+    int ss=s.majorityElement(res);
+    cout<<ss<<endl;
+}
