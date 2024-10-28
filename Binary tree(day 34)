@@ -1,0 +1,63 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* left, * right;
+
+    Node(int d) {
+        data = d;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+void inOrderDFS(Node* node) {
+    if (node == nullptr) {return;
+}
+else{
+    inOrderDFS(node->left);
+    cout << node->data << " ";
+    inOrderDFS(node->right);
+}
+}
+void preOrderDFS(Node* node) {
+    if (node == nullptr) {
+        return;
+    }
+    else{
+    cout << node->data << " ";
+    inOrderDFS(node->left);
+    inOrderDFS(node->right);
+    }
+
+}
+void postOrderDFS(Node* node) {
+    if (node == nullptr) {
+        return;
+}
+else{
+    inOrderDFS(node->left);
+    inOrderDFS(node->right);
+    cout << node->data << " ";
+}
+}
+int main(){
+    Node * firstnode=new Node(2);
+    Node * secondnode=new Node(3);
+    Node * thirdnode=new Node(4);
+    Node * fourthnode=new Node(5);
+
+    firstnode->left=secondnode;
+    firstnode->right=thirdnode;
+    secondnode->left=fourthnode;
+    cout<<"Inorder: ";
+    inOrderDFS(firstnode);
+    cout<<endl;
+    cout<<"Preorder : ";
+    preOrderDFS(firstnode);
+        cout<<endl;
+    cout<<"Postorder : ";
+
+    postOrderDFS(firstnode);
+    return 0;
+}
