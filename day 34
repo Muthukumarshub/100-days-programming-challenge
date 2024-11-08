@@ -1,0 +1,53 @@
+import  java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	   Scanner scan =new Scanner(System.in);
+	   int n;
+	   n=scan.nextInt();
+	   int arr[]=new int[n];
+	   for(int i=0;i<n;i++){
+	       arr[i]=scan.nextInt();
+	   }
+	   int eve[]=new int[5];
+	   int odd[]=new int[4];
+	   for(int i=0,j=0,k=0;i<n;i++){
+	       if(arr[i]%2==0){
+	           eve[j]=arr[i];
+	           j++;
+	       }
+	       else{
+	           odd[k]=arr[i];
+	           k++;
+	       }
+	   }
+	   for(int i=0;i<odd.length-1;i++){
+	       int index=i;
+	       for(int j=i+1;j<odd.length;j++){
+	           if(odd[j]<odd[index]){
+	               index=j;
+	           }
+	       }
+	       int temp=odd[i];
+	       odd[i]=odd[index];
+	       odd[index]=temp;
+	   }
+	   for(int i=0;i<eve.length-1;i++){
+	       int index=i;
+	       for(int j=i+1;j<eve.length;j++){
+	           if(eve[j]<eve[index]){
+	               index=j;
+	           }
+	       }
+	       int temp=eve[i];
+	       eve[i]=eve[index];
+	       eve[index]=temp;
+	   }
+	   for(int i=0;i<eve.length;i++){
+	       System.out.print(eve[i]+" ");
+	   }
+	    for(int i=0;i<odd.length;i++){
+	       System.out.print(odd[i]+" ");
+	   }
+	}
+}
