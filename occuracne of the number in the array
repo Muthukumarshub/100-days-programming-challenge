@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int arr[7]={4,3,5,5,3,7,4};
+    map<int,int> map;
+    for(int i=0;i<(sizeof(arr)/sizeof(arr[0]));i++){
+        map[arr[i]]++;
+    }
+    int m=0;
+ for (const auto &pair : map) {
+     if(pair.second == 1){
+         cout<<pair.first;
+     }
+     else{
+         continue;
+     }
+    }
+    
+    return 0;
+}
