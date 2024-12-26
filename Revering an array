@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n;
+        n=scan.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+          arr[i]=scan.nextInt();  
+        }
+    int kk=n/2;
+       int s=(int)Math.floor(kk);
+       int k=n-1;
+       for(int i=0;i<n;i++){
+           int temp;
+           if(i==s){
+               break;
+           }
+           else{
+             temp=arr[i];
+             arr[i]=arr[k-i];
+             arr[k-i]=temp;
+           }
+       }
+       for(int i=0;i<n;i++){
+           System.out.print(arr[i]+" ");
+       }
+        }
+}
