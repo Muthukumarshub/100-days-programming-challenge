@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    int n=scan.nextInt();
+    for(int i=0;i<n;i++){
+        int count=0;
+        int l = scan.nextInt();
+        int r = scan.nextInt();
+        for(int j=l;j<=r;j++){
+            if(j<10){
+                if(j==2 || j==3 || j==9){
+                    count++;
+                }
+            }
+            else{
+                int c=j%10;
+                if(c==2 || c==3 || c==9){
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
+    }
+    
+	}
+}
