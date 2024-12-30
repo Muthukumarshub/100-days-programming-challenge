@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+
+class GFG
+{
+    public static void main(String args[])throws IOException
+    {
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(read.readLine());
+        while(t-- > 0)
+        {
+            int N = Integer.parseInt(read.readLine());
+            Solution ob = new Solution();
+            System.out.println(ob.isBitSet(N));
+        
+System.out.println("~");
+}
+    }
+}
+// } Driver Code Ends
+
+
+//User function Template for Java
+class Solution{
+    static int isBitSet(int N){
+        String s=Integer.toBinaryString(N);
+        char[] ch = s.toCharArray();
+        HashSet<Character> set = new HashSet<>();
+        for( char x : ch){
+            set.add(x);
+        }
+        if(set.size() == 1 && set.contains('1')){
+                return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+}
