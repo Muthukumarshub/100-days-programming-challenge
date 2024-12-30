@@ -1,0 +1,40 @@
+import java.util.*;
+class light{
+    int led;
+    String color;
+    String type;
+    boolean status;
+    
+      light(int l, String c,String t, boolean s){
+        this.led=l;
+        this.color=c;
+        this.type = t;
+        this.status=s;
+    }
+    public void switchOn(){
+        System.out.println("Switched on!");
+    }
+    public void switchOff(){
+        System.out.println("Switched off!");
+    }
+    public void getValue(){
+        System.out.println("LED : " +led);
+        System.out.println("COLOR : "+color);
+        System.out.println("TYPE : "+type);
+        System.out.println("STSTUS : "+status);
+        System.out.println("_ _".repeat(10));
+
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    light l1= new light(5,"red","strip",false);
+	    l1.switchOn();
+	    l1.switchOff();
+	    l1.getValue();
+	    light l2= new light(10,"Blue","Ring light",true);
+	    l2.getValue();
+	}
+}
