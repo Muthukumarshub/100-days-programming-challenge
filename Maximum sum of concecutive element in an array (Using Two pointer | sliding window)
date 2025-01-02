@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int tar=4;
+	    int[] arr={1,2,3,4,5,6,7};
+	    int l=0,r=tar-1;
+	    int sum=0;
+	    int maxsum=0;
+	    for(int i=l;i<=r;i++){
+	        sum+=arr[i];
+	    }
+	    maxsum=sum;
+	    while(r<arr.length-1){
+	        sum-=arr[l];
+	        l++;
+	        r++;
+	        sum+=arr[r];
+	        maxsum =Math.max(maxsum,sum);
+	    }
+	    System.out.print(maxsum);
+	}
+}
