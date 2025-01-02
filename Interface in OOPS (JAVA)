@@ -1,0 +1,29 @@
+import java.util.*;
+interface sample{
+    public void display();
+    public void sam();
+    public void result(int s);
+}
+class sub implements sample{
+    private int s;
+    public void display(){
+        System.out.println("Hello Muthukumar");
+    }
+    public void sam(){
+        System.out.println("this code is about the implementation if the interface");
+    }
+    public void result(int s){
+        this.s=s;
+        System.out.println(s+s);
+    }
+    
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    sub s = new sub();
+	    s.display();
+	    s.sam();
+	    s.result(10);
+	}
+}
