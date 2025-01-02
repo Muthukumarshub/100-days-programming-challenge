@@ -1,0 +1,25 @@
+import java.util.*;
+class poly{
+    public void sample(int a,int b){
+        System.out.println(a+b);
+    }
+    public void sample(String a,String b){
+        System.out.println(a+b);
+    }
+    public void sample(float a,float b){
+           System.out.println(a+b);
+    }
+    public void sample(double a,double b){
+        System.out.println(a+b);
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+    poly p = new poly();
+    p.sample(1,2);
+    p.sample("Muthu","Kumar");
+    p.sample(2.0,3.0);
+    p.sample(3.30,5.56);
+	}
+}
