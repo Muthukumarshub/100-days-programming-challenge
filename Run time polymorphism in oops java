@@ -1,0 +1,27 @@
+import java.util.*;
+class poly{
+    public void sample(){
+        System.out.println("Ploy class message!");
+    }
+}
+class sub extends poly{
+    public void sample(){
+        System.out.println("Sub class message!");
+    }
+}
+class sub2 extends poly{
+    public void sample(){
+        System.out.println("Sub class message!");
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+    poly p = new poly();
+    p.sample();
+    sub p1 = new sub();
+    p1.sample();
+    sub2 p2 =new sub2();
+    p2.sample();
+	}
+}
