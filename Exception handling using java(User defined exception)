@@ -1,0 +1,28 @@
+import java.util.*;
+import java.io.*;
+class userdefinedException extends Exception{
+    public userdefinedException(String m){
+        super(m);
+    }
+}
+public class Main{
+public static int getvalue(int arr[] , int x) throws userdefinedException{
+    if(x<0 || x>arr.length){
+        throw new userdefinedException("The array index in exceed to the length of the array");
+    }
+    else{
+    return arr[x];
+    }
+}
+	public static void main(String[] args) {
+		int []arr={1,2,3,4,5,6};
+	try {
+		    System.out.println(getvalue(arr,10));
+		} catch(userdefinedException e) {
+		    System.out.println(e);
+		}
+		finally{
+		    System.out.println("Execution of the code complated");
+		}
+	}
+}
