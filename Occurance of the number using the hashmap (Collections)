@@ -1,0 +1,16 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    	    int[] arr={10,20,30,10,10,40,50,10,60,10};
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int x : arr){
+            map.put(x,map.getOrDefault(x,0)+1);
+        }
+        for(int x:map.keySet()){
+            if(x == 10){
+            System.out.println(x+" - "+map.get(x));
+            }
+        }
+	}
+}
