@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	 TreeSet<Integer> set = new TreeSet<>();
+	 set.add(11);
+	 set.add(2);
+	 set.add(33);
+	 set.add(14);
+	 	 set.add(12);
+
+	 System.out.println(set.first());
+	 System.out.println(set.last());
+	 System.out.println(set.higher(14));
+	 System.out.println(set.lower(14));
+        set.pollFirst();
+        set.pollLast();
+        	 System.out.println(set.contains(12));
+
+	 Iterator<Integer> it =set.iterator();
+	 while(it.hasNext()){
+	     System.out.println(it.next());
+	 }
+	}
+}
