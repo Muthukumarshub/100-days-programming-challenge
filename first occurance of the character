@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main
+{
+    public static char duplicate(LinkedHashMap<Character,Integer> map){
+         for(char x : map.keySet()){
+	        if(map.get(x)>1){
+	           return x;
+	        }
+	    }
+	    return '.';
+    }
+    
+	public static void main(String[] args) {
+	    Scanner scan = new Scanner(System.in);
+	    int n=scan.nextInt();
+	    scan.nextLine();
+	    while(n>0){
+	    LinkedHashMap<Character,Integer> map = new LinkedHashMap<>();
+
+	    String s=scan.nextLine();
+
+	    char[] c=s.toCharArray();
+	    for(char ch : c){
+	        map.put(ch,map.getOrDefault(ch,0)+1);
+	    }
+	    System.out.println(duplicate(map));
+	    n--;
+	    }
+	   
+	}
+}
