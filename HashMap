@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scan = new Scanner(System.in);
+	    HashMap<Float,HashMap<String,String>> map = new HashMap<>();
+	    
+	    //Method 1
+	    
+	    map.put(1.0f,new HashMap<String,String>());
+	    map.get(1.0f).put("1","one");
+	    map.get(1.0f).put("2","Two");
+	    map.put(2.0f, new HashMap<String,String>());
+	    map.get(2.0f).put("3","Three");
+	    map.get(2.0f).put("4","Four");
+	    
+	    //Method 2
+	    
+	    HashMap<String,String> n =  new HashMap<>();
+	    n.put("5","Five");
+	    n.put("6","Six");
+
+	    
+	    map.put(3.0f,n);
+	    
+	    for(float x : map.keySet()){
+	        System.out.println(x +" : "+map.get(x));
+	    }
+	    
+	}
+}
