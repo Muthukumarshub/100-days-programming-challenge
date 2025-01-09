@@ -1,0 +1,245 @@
+import java.util.*;
+
+//class for creating the new node;
+
+class Node{
+    int data;
+    Node link;
+    Node(int data){
+        this.data=data;
+        link=null;
+    }                                    
+}
+
+//class for managing the LinkedList
+class LinkedList{
+    Node head;
+    
+    LinkedList(){
+        head=null;
+    }
+    //Insert at the beginning of the LinkedList...
+    
+    public String addFirst(int v){
+        if(head == null){
+            Node newNode = new Node(v);
+            head= newNode;
+            return "Inserted...";
+        }
+        else{
+            Node newNode = new Node(v);
+            newNode.link=head;
+            head=newNode;
+            return "Inserted...";
+        }
+    }
+    //Inserted at the end of the LinkedList
+    
+    public String addLast(int n){
+        if(head == null){
+            Node newNode = new Node(n);
+            head=newNode;
+            return "Inserted...";
+        }
+        else{
+            Node current =head;
+            while(current.link!=null){
+                current=current.link;
+            }
+            Node newNode = new Node(n);
+            current.link=newNode;
+            return "Inserted...";
+        }
+    }
+    
+    //Inserted at the specified position
+    
+    public String addAtSpec(int data,int pos){
+        int count =0;
+        
+        if(pos == 0){
+            addFirst(data);
+        }
+        else{
+            Node newNode = new Node(data);
+            Node current = head;
+            while(count < pos-1){
+                current=current.link;
+                count++;
+            }
+            
+            newNode.link=current.link;
+            current.link=newNode;
+            return "Inserted...";
+        }
+        return "";
+    }
+    
+    //Delete element at the first
+    
+    public String deleteFirst(){
+        Node current = head;
+        if(current == null){
+            return "The LinkedList is empty...";
+        }
+        else{
+            head=current.link;
+            return "Deleted the first element...";
+        }
+    }
+    
+    //Delete the last element in the LinkedList
+    
+    public String deleteLast(){
+        Node temp =head;
+        if(temp == null){
+            return " LinkedList is empty";
+        }
+        else if(temp.link == null){
+            temp.link=null;
+            return "Deleted the last Element...";
+        }
+        else{
+	   while(temp.link.link!=null){
+	       temp = temp.link;
+	   }
+	      temp.link=null;
+            return "Deleted the last element...";
+        }
+    }
+    
+    //Delete the specified element 
+    
+    public String deleteAtSpec(int val){
+        Node current = head;
+        boolean status = false;
+        if(current == null){
+            return "LinkedList is empty ...";
+        }
+        else if(current.data==val){
+            current=null;
+            return "Deleted the element ...";
+        }
+        else{
+            while(current.link.data != val && current.link!=null){
+                current=current.link;
+            }
+            current.link=current.link.link;
+            return "Deleted the element ...";
+        }
+    }
+    
+    //Print the  LinkedList and print it
+    
+    public void traverse(){
+        Node current = head;
+	   while(current!=null){
+	       System.out.print(current.data+"->");
+	       current = current.link;
+	   }
+	   System.out.println();
+    }
+    
+    //Search element 
+    
+    public int search(int val){
+        Node current =head;
+        int count =0;
+        while(current!=null){
+            if(current.data == val){
+                return count;
+            }
+            else{
+                current=current.link;
+                count ++;
+            }
+            
+        }
+        return -1;
+    }
+    
+    //Get the last element 
+    
+    public Node getlast(){
+        Node temp = head;
+	   while(temp.link!=null){
+	       temp = temp.link;
+	   }
+	   return temp;
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scan = new Scanner(System.in);
+	   LinkedList l = new LinkedList();
+	   try{
+	   while(true){
+	       System.out.println("1 -> Add the element in the First : ");
+	       System.out.println("2 -> Add the element in the specified position : ");
+	       System.out.println("3 -> Add the element in the Last : ");
+	       System.out.println("4 -> Delete the element in the first : ");
+	       System.out.println("5 -> Delete the element in the specified value : ");
+	       System.out.println("6 -> Delete the element in the last : ");
+	       System.out.println("7 -> Search the element : ");
+	       System.out.println("8 -> last element in the LinkedList : ");
+	       System.out.println("9 -> Print the element in the linked LinkedList : ");
+	       System.out.println("10 -> Exit ");
+           int c = scan.nextInt();
+           int n;
+           switch(c){
+               case 1:
+                   System.out.println("Enter the element : ");
+                    n=scan.nextInt();
+                   System.out.println( l.addFirst(n));
+                   break;
+                   
+                case 2:
+                    System.out.println("Enter the element and the position : ");
+                    n=scan.nextInt();
+                    int pos=scan.nextInt();
+                    System.out.println(l.addAtSpec(n,pos-1));
+                    break;
+                case 3:
+                    System.out.println("Enter the element : ");
+                     n=scan.nextInt();
+                    System.out.println( l.addLast(n));
+                    break;
+                case 4:
+                    System.out.println(l.deleteFirst());
+                    break;
+                case 5:
+                    System.out.println("Enter the element to delete : ");
+                     n=scan.nextInt();
+	                System.out.println(l.deleteAtSpec(n));
+                    break; 
+                case 6:
+                    System.out.println(l.deleteLast());
+                    break; 
+                case 7:
+                    System.out.println("Enter the element to serach the postion : ");
+                     n=scan.nextInt();
+	                System.out.println("position : "+l.search(n)+1);
+                    break;
+                case 8:
+                    System.out.println("Last Element : "+l.getlast().data);
+                    break;
+                case 9:
+                    l.traverse();
+                    break;
+                case 10:
+                    System.out.println("program Exit!");
+                    System.exit(0);
+                default:
+                    System.out.println("Enter the valid chioce!");
+                    break;
+           }
+	   }
+	   }
+	   catch(Exception e){
+	       System.out.println(e);
+	   }
+	   
+	}
+}
